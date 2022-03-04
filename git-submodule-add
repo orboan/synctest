@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ -z "$1" ]
   then
-    echo "SSH git repo url must be supplied"
+    echo "Git repo url in the SSH form must be supplied"
     echo "Error: No argument supplied"
     exit 1
 fi
