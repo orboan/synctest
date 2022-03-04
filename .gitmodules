@@ -10,3 +10,6 @@
 [submodule "collab-test-nb"]
 	path = collab-test-nb
 	url = git@github.com:orboan/collab-test-nb.git
+[submodule "itacademy1"]
+	path = itacademy1
+	url = git@github.com:orboan/itacademy1.git
