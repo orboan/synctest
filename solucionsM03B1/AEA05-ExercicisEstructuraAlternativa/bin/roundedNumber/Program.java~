@@ -1,0 +1,39 @@
+/*
+ * Program.java        1.0 25/10/2011
+ *
+ * Models the program.
+ *
+ * Copyright 2011 Mònica Ramírez Arceda <mramirez@escoladeltreball.org>
+ *                Joaquim Laplana Tarragona <jlaplana@escoladeltreball.org>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program {
+    /**
+     * Rounds a real number. See http://en.wikipedia.org/wiki/Real_number for
+     * more information. See http://en.wikipedia.org/wiki/Integer for more
+     * information.
+     * 
+     * @param a a real number
+     * @param nd number of digits to be rounded
+     * @return the rounded number
+     */
+    public double round(double a, int nd) {
+        // Move the decimal point to the next digit to be rounded
+        double x = a * Math.pow(10, nd + 1);
+        // Cut the decimal part
+        int y = (int) x;
+        int u = y % 10; // Get the digit of units
+        if (u >= 5) {
+            // Move the decimal point one position to the left and add 1
+            y = y / 10 + 1; 
+        } else {
+            // Move the decimal point one position to the left
+            y = y / 10; 
+        }
+        x = y / Math.pow(10, nd);
+        return x;
+    }
+}

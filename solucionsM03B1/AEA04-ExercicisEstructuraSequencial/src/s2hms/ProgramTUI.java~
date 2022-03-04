@@ -1,0 +1,52 @@
+/*
+ * ProgramTUI.java        1.0 17/10/2011
+ *
+ * Models the program.
+ *
+ * Copyright 2011 Mònica Ramírez Arceda <mramirez@escoladeltreball.org>
+ *                Joaquim Laplana Tarragona <jlaplana@escoladeltreball.org>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+import java.util.Scanner;
+
+public class ProgramTUI {
+
+    /**
+     * Convert a number of seconds into hours, minutes and seconds.
+     * 
+     * @param s a number of seconds.
+     * @return a string with the format hours:minutes:seconds
+     */
+    public String s2hms(int s) {
+        int h, rs, m;
+        h = s / 3600; // Entire hours
+        rs = s % 3600; // Rest of seconds
+        m = rs / 60; // Entire minutes
+        rs = rs % 60; // Rest of seconds
+        return h + ":" + m + ":" + rs;
+    }
+
+    /**
+     * Modelizes the UI as a TUI.
+     * 
+     * @param args not used.
+     */
+    public static void main(String[] args) {
+        int s;
+        Scanner sc = new Scanner(System.in);
+        // Write the title of the program.
+        System.out.print("\n\nCONVERTIR SEGONS A HORES, MINUTS I SEGONS EN FORMAT HH:MM:SS.\n\n");
+        // Read the number of seconds
+        System.out.print("Segons ? ");
+        s = sc.nextInt();
+        // Calculate hours, minutes and seconds
+        ProgramTUI p = new ProgramTUI();
+        String hms = p.s2hms(s);
+        // Write the result
+        System.out.println("\nhores:minuts:segons --> " + hms);
+    }
+
+}

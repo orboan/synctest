@@ -1,0 +1,26 @@
+/*
+ * Program.java        1.0 08/01/2012
+ *
+ * Models the program.
+ *
+ * Copyright 2011 Mònica Ramírez Arceda <mramirez@escoladeltreball.org>
+ *                Joaquim Laplana Tarragona <jlaplana@escoladeltreball.org>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program {
+
+    /**
+     * Determines if a string is a substring of another string.
+     * 
+     * @param s1 a string
+     * @param s2 a string
+     * @return true if s2 is a substring of s1, false otherwise.
+     */
+    public boolean isSubstring(String s1, String s2) {
+        return s1.indexOf(s2) != -1 ? true : false;
+    }
+
+}

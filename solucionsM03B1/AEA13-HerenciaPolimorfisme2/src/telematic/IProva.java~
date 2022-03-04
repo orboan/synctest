@@ -1,0 +1,3 @@
+public interface IProva {
+    public int a;
+}

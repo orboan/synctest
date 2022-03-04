@@ -1,0 +1,57 @@
+import java.util.Arrays;
+
+/*
+ * Program.java        1.0 13/12/2011
+ *
+ * Models the program.
+ *
+ * Copyright 2011 Mònica Ramírez Arceda <mramirez@escoladeltreball.org>
+ *                Joaquim Laplana Tarragona <jlaplana@escoladeltreball.org>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program {
+    public void statistics(int[][] hores) {
+        String[] assignatures = { "SO", "PROG", "BBDD", "XML", "FOL", "EMP", "total" };
+        String[] mesos = { "gener", "febrer", "març", "abril", "maig", "juny", "juliol", "agost", "setembre", "octubre", "novembre", "desembre", "total" };
+        int i, j, nMesos = mesos.length - 1, nAssig = assignatures.length - 1;
+
+        // L'array hores contindrà les hores estudiades per a cada assignatura i
+        // les files i columnes dels totals
+        int[][] horesAmbTotals = new int[nAssig + 1][nMesos + 1];
+        System.arraycopy(hores, 0, horesAmbTotals, 0, nAssig);
+        for (int k = 0; i < horesAmbTotals.length; k++)
+            System.out.print(Arrays.toString(horesAmbTotals[k])+"  ");
+
+        // Omplim els totals de les assignatures
+        for (i = 0; i < nAssig; i++) {
+            for (j = 0; j < nMesos; j++) {
+                horesAmbTotals[i][nMesos] = horesAmbTotals[i][nMesos] + horesAmbTotals[i][j];
+            }
+        }
+        // Omplim els totals dels mesos
+        for (j = 0; j < nMesos + 1; j++) {
+            for (i = 0; i < nAssig; i++) {
+                horesAmbTotals[nAssig][j] = horesAmbTotals[nAssig][j] + horesAmbTotals[i][j];
+            }
+        }
+        // Imprimim la taula final
+        // Primera fila
+        System.out.printf("%5s", "");
+        for (i = 0; i < nMesos + 1; i++) {
+            System.out.printf("%10s", mesos[i]);
+        }
+
+        // Resta de files
+        for (i = 0; i < nAssig + 1; i++) {
+            System.out.printf("\n%5s", assignatures[i]);
+            for (j = 0; j < nMesos + 1; j++) {
+                System.out.printf("%10d", horesAmbTotals[i][j]);
+            }
+        }
+
+        System.out.printf("\n\n");
+    }
+}

@@ -1,0 +1,59 @@
+/*
+ * AreasTest.java               
+ *
+ * Copyright 2010 Mònica Ramírez Arceda <mramirez@escoladeltreball.org>
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ *
+ */
+
+import java.util.HashSet;
+
+/**
+ * Main program.
+ */
+public class AreasTest {
+
+    public static void main(String args[]) {
+        // Create an office
+        Office d1 = new Office("Oficina 1", 40, true, 600);
+        d1.setCoffeeMachine(true);
+        // Creem un laboratori
+        Laboratory a1 = new Laboratory("Laboratori 1", 75, true, 1200, 20);
+        a1.setnBunsen(12);
+        // Creem una aula d'informàtica
+        Computing a2 = new Computing("Informàtica 1", 75, true, 6000, 15);
+        a2.setNPrinters(3);
+        // Creem un gimnàs
+        Gym a3 = new Gym("Gimnàs", 500, true, 300, 200);
+        a3.setNstands(2000);
+        // Consum d'electricitat
+        HashSet<Area> espais = new HashSet<Area>();
+        espais.add(d1);
+        espais.add(a1);
+        espais.add(a2);
+        espais.add(a3);
+        System.out.println("Consum elèctric");
+        System.out.println("---------------------------------");
+        double consumtotal = 0;
+        for (Area e : espais) {
+            consumtotal += e.getConsumption();
+            System.out.println("L'espai " + e.getCode() + " consumeix: "
+                + e.consumptionM2() + " W/m2");
+        }
+        System.out.println("El consum total de l'institut és de: "
+            + consumtotal + " W\n\n");
+        // Càlcul de superfícies per estudiant
+        HashSet<Classroom> aules = new HashSet<Classroom>();
+        aules.add(a1);
+        aules.add(a2);
+        aules.add(a3);
+        System.out.println("Superfície per estudiant");
+        System.out.println("---------------------------------");
+        for (Classroom a : aules) {
+            System.out.println("L'Aula " + a.getCode() + " disposa de: "
+                + a.surfaceAreaStudent() + " m2 per estudiant");
+        }
+    }
+
+}

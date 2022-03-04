@@ -1,0 +1,29 @@
+/*
+ * Program.java        1.0 08/01/2012
+ *
+ * Models the program.
+ *
+ * Copyright 2011 Mònica Ramírez Arceda <mramirez@escoladeltreball.org>
+ *                Joaquim Laplana Tarragona <jlaplana@escoladeltreball.org>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program {
+
+    /**
+     * Converts a DNI into a NIF.
+     * 
+     * @param dni a number of DNI (represented with a string)
+     * @return the correspondig NIF
+     */
+    public String dni2nif(String dni) {
+        String lletres = "TRWAGMYFPDXBNJZSQVHLCKE";
+        int dniI = Integer.parseInt(dni);
+        int residu = dniI % 23;
+        String nif = dni + lletres.charAt(residu);
+        return nif;
+    }
+
+}

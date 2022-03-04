@@ -1,0 +1,60 @@
+/*
+ * ProgramTUI.java        1.0 17/10/2011
+ *
+ * Models the program.
+ *
+ * Copyright 2011 Mònica Ramírez Arceda <mramirez@escoladeltreball.org>
+ *                Joaquim Laplana Tarragona <jlaplana@escoladeltreball.org>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class ProgramTUI {
+
+    /**
+     * Calculates the rotation period of a satellite around the planet.
+     * 
+     * @param h the orbit height of a satellite, in km.
+     * @return a string with the format h:m, where h:m is the rotation period.
+     */
+    public String rotationPeriod(double h) {
+        double gravity, radius, time;
+        int hours, minutes;
+        gravity = 9.81; // Gravity
+        radius = 6371000; // Earth radius in meters
+        h = h * 1000; // Height in meters
+        // Time in seconds
+        time = 2 * Math.PI * Math.pow(radius + h, 3.0 / 2) / (radius * Math.sqrt(gravity));
+        // Convert the time into hours and minutes, ignoring the rest of seconds.
+        hours = (int) (time / 3600);
+        minutes = (int) ((time - hours * 3600) / 60);
+        // Return the formatted string
+        return hours + ":" + minutes;
+    }
+
+    /**
+     * Modelizes the UI as a TUI.
+     * 
+     * @param args not used.
+     */
+    public static void main(String[] args) {
+        double h;
+        Scanner s = new Scanner(System.in);
+        s.useLocale(Locale.ENGLISH);
+        // Print the title of the program
+        System.out.print("\nSATÈL·LIT EN ÒRBITA TERRESTRE.\n\n");
+        // Read the input data
+        System.out.print("Altura de l'òrbita (Km) ? ");
+        h = s.nextDouble();
+        // Process the data
+        ProgramTUI p = new ProgramTUI();
+        String hm = p.rotationPeriod(h);
+        // Write the result
+        System.out.print("Període de rotació (hh:mm) = " + hm + "\n");
+    }
+
+}

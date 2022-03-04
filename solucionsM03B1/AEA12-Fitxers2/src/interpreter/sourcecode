@@ -1,0 +1,18 @@
+000 stor 0 95
+001 stor 1 25
+002 prin 0 45
+003 prin 1
+004 endl
+005 subs 0 1
+006 jzer 0 014
+007 jneg 0 009
+008 goto 002
+009 acum 0 1
+010 copy 2 0
+011 copy 0 1
+012 copy 1 2
+013 goto 002
+014 endl
+015 prin 1 
+016 endl
+017 stop

@@ -1,0 +1,24 @@
+/*
+ * Program.java        1.0 13/10/2011
+ *
+ * Modelizes the program.
+ *
+ * Copyright 2011 NAME <EMAIL>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program {
+
+    /**
+     * METHOD DESCRIPTION
+     * 
+     * @param 
+     * @param 
+     * @return 
+     */
+    public OUTPUT_DATA_TYPE METHOD_NAME(INPUT_DATA_TYPE1 NAME_PARAM1, INPUT_DATA_TYPE2 NAME_PARAM2,...) {
+
+    }
+}

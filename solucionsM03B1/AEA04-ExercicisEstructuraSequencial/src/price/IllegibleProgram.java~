@@ -1,0 +1,6 @@
+public class IllegibleProgram {
+public float p(float a,float b,float c) {
+float d;
+d=a+a*b/100-a*c/100;
+  return d;
+}}

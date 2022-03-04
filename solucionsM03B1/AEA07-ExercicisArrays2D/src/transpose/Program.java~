@@ -1,0 +1,33 @@
+/*
+ * Program.java        1.0 12/12/2011
+ *
+ * Models the program.
+ *
+ * Copyright 2011 Mònica Ramírez Arceda <mramirez@escoladeltreball.org>
+ *                Joaquim Laplana Tarragona <jlaplana@escoladeltreball.org>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program {
+
+    /**
+     * Calculate the transposed matrix of a matrix.
+     * 
+     * @param matrix a matrix
+     * @param nr the number of rows of the matrix
+     * @param nc the number of columns of the matrix
+     * @return the transposed matrix
+     */
+    public double[][] transpose(double[][] matrix, int nr, int nc) {
+        int i, j;
+        double[][] matrixT = new double[nc][nr];
+        for (i = 0; i < nc; i++) {
+            for (j = 0; j < nr; j++) {
+                matrixT[i][j] = matrix[j][i];
+            }
+        }
+        return matrixT;
+    }
+}
