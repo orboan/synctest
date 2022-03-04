@@ -10,3 +10,6 @@
 [submodule "itacademy1"]
 	path = itacademy1
 	url = git@github.com:orboan/itacademy1.git
+[submodule "git-sync"]
+	path = git-sync
+	url = git@github.com:simonthum/git-sync.git
