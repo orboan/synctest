@@ -13,6 +13,7 @@ if [ $proto != "git" ]; then
 fi
 
 dirname=$(echo "$1" | cut -d'/' -f 2 | cut -d'.' -f 1)
-echo $dirname
-#git rm -f --cached collab-test-nb
-#git submodule add git@github.com:orboan/jupyterhub-deploy-teaching.git jupyterhub-deploy-teaching
+#echo $dirname
+git rm -f --cached $dirname > /dev/null
+git submodule add $1 $dirname
+exit 0
