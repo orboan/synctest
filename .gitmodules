@@ -1,10 +1,6 @@
 [submodule "lab2"]
 	path = lab2
 	url = git@github.com:orboan/lab2.git
-	ignore = all
-[submodule "git@github.com"]
-	path = git@github.com
-	url = git@github.com:orboan/azvm-programming-with-nb.git
 [submodule "azvm-programming-with-nb"]
 	path = azvm-programming-with-nb
 	url = git@github.com:orboan/azvm-programming-with-nb.git
@@ -14,4 +10,3 @@
 [submodule "itacademy1"]
 	path = itacademy1
 	url = git@github.com:orboan/itacademy1.git
-	ignore = all
