@@ -13,3 +13,6 @@
 [submodule "git-sync"]
 	path = git-sync
 	url = git@github.com:simonthum/git-sync.git
+[submodule "git/synctest/theater"]
+	path = git/synctest/theater
+	url = git@github.com:orboan/theater.git
