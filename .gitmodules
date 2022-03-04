@@ -7,3 +7,6 @@
 [submodule "azvm-programming-with-nb"]
 	path = azvm-programming-with-nb
 	url = git@github.com:orboan/azvm-programming-with-nb.git
+[submodule "collab-test-nb"]
+	path = collab-test-nb
+	url = git@github.com:orboan/collab-test-nb.git
