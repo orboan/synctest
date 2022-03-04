@@ -1,4 +1,5 @@
 #!/bin/bash
+## Maintained by orboan@pluralcamp.com
 if [ -z "$1" ]
   then
     echo "Git repo url in the SSH form must be supplied"
