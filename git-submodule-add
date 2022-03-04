@@ -1,4 +1,11 @@
 #!/bin/bash
+if [ -z "$1" ]
+  then
+    echo "SSH git repo url must be supplied"
+    echo "Error: No argument supplied"
+    exit 1
+fi
 
+dirname=$(echo "$1" | cut -d'/' -f 2 | cut -d'.' -f 1)
 #git rm -f --cached collab-test-nb
 #git submodule add git@github.com:orboan/jupyterhub-deploy-teaching.git jupyterhub-deploy-teaching
