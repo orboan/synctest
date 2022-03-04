@@ -1,4 +1,4 @@
 #!/bin/bash
 
 #git rm -f --cached collab-test-nb
-
+#git submodule add git@github.com:orboan/jupyterhub-deploy-teaching.git jupyterhub-deploy-teaching
