@@ -15,6 +15,6 @@ fi
 
 dirname=$(echo "$1" | cut -d'/' -f 2 | cut -d'.' -f 1)
 #echo $dirname
-git rm -f --cached $dirname > /dev/null
-git submodule add $1 $dirname
+git rm -f --cached ${PWD#"$HOME/"}/$dirname > /dev/null
+git submodule add $1 ${PWD#"$HOME/"}/$dirname
 exit 0
